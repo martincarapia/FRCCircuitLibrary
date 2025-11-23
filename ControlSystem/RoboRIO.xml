@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component version="1.0" xmlns="http://schemas.circuit-diagram.org/circuitDiagramDocument/2012/component/xml">
   <declaration>
-    <meta name="name" value="RoboRIO" />
-    <meta name="author" value="FRC Team" />
+    <meta name="name" value="NI roboRIO 2.0" />
+    <meta name="author" value="Martin Carapia" />
     <meta name="category" value="FRC Control System" />
     <!-- Unique GUID - Do not change this for this specific component -->
     <meta name="guid" value="550e8400-e29b-41d4-a716-446655440001" />
@@ -10,59 +10,176 @@
 
   <connections>
     <group>
-      <!-- Power Input (Top Left) -->
-      <connection name="Vin" start="_Start+10x" end="_Start+10x-10y" edge="start" />
-      <connection name="GND" start="_Start+30x" end="_Start+30x-10y" edge="start" />
-      
-      <!-- CAN Bus (Top Right) -->
-      <connection name="CAN H" start="_Start+110x" end="_Start+110x-10y" edge="start" />
-      <connection name="CAN L" start="_Start+130x" end="_Start+130x-10y" edge="start" />
+      <!-- Left Side (Power/Comms) -->
+      <!-- Power -->
+      <connection name="Vin" start="_Start+20y" end="_Start-10x+20y" edge="start" />
+      <connection name="GND" start="_Start+30y" end="_Start-10x+30y" edge="start" />
 
-      <!-- PWM Outputs (Bottom) -->
-      <connection name="PWM 0" start="_Start+20x+100y" end="_Start+20x+110y" edge="end" />
-      <connection name="PWM 1" start="_Start+40x+100y" end="_Start+40x+110y" edge="end" />
-      <connection name="PWM 2" start="_Start+60x+100y" end="_Start+60x+110y" edge="end" />
-      <connection name="PWM 3" start="_Start+80x+100y" end="_Start+80x+110y" edge="end" />
+      <!-- Ethernet/USB -->
+      <connection name="ETH" start="_Start+50y" end="_Start-10x+50y" edge="start" />
+      <connection name="USB B" start="_Start+60y" end="_Start-10x+60y" edge="start" />
+      <connection name="USB A" start="_Start+70y" end="_Start-10x+70y" edge="start" />
+
+      <!-- CAN -->
+      <connection name="CAN H" start="_Start+90y" end="_Start-10x+90y" edge="start" />
+      <connection name="CAN L" start="_Start+100y" end="_Start-10x+100y" edge="start" />
+
+      <!-- I2C -->
+      <connection name="I2C 3.3V" start="_Start+120y" end="_Start-10x+120y" edge="start" />
+      <connection name="I2C SDA" start="_Start+130y" end="_Start-10x+130y" edge="start" />
+      <connection name="I2C SCL" start="_Start+140y" end="_Start-10x+140y" edge="start" />
+      <connection name="I2C GND" start="_Start+150y" end="_Start-10x+150y" edge="start" />
+
+      <!-- RS-232 -->
+      <connection name="RS-232 GND" start="_Start+170y" end="_Start-10x+170y" edge="start" />
+      <connection name="RS-232 TX" start="_Start+180y" end="_Start-10x+180y" edge="start" />
+      <connection name="RS-232 RX" start="_Start+190y" end="_Start-10x+190y" edge="start" />
+
+      <!-- SPI -->
+      <connection name="SPI 3.3V" start="_Start+210y" end="_Start-10x+210y" edge="start" />
+      <connection name="SPI 5V" start="_Start+220y" end="_Start-10x+220y" edge="start" />
+      <connection name="SPI GND" start="_Start+230y" end="_Start-10x+230y" edge="start" />
+      <connection name="SPI SCLK" start="_Start+240y" end="_Start-10x+240y" edge="start" />
+      <connection name="SPI COPI" start="_Start+250y" end="_Start-10x+250y" edge="start" />
+      <connection name="SPI CIPO" start="_Start+260y" end="_Start-10x+260y" edge="start" />
+      <connection name="SPI CS0" start="_Start+270y" end="_Start-10x+270y" edge="start" />
+      <connection name="SPI CS1" start="_Start+280y" end="_Start-10x+280y" edge="start" />
+      <connection name="SPI CS2" start="_Start+290y" end="_Start-10x+290y" edge="start" />
+      <connection name="SPI CS3" start="_Start+300y" end="_Start-10x+300y" edge="start" />
+
+      <!-- Right Side (IO/Outputs) -->
+      <!-- RSL -->
+      <connection name="RSL S" start="_Start+180x+20y" end="_Start+190x+20y" edge="end" />
+      <connection name="RSL G" start="_Start+180x+30y" end="_Start+190x+30y" edge="end" />
+
+      <!-- DIO -->
+      <connection name="DIO 0" start="_Start+180x+50y" end="_Start+190x+50y" edge="end" />
+      <connection name="DIO 1" start="_Start+180x+60y" end="_Start+190x+60y" edge="end" />
+      <connection name="DIO 2" start="_Start+180x+70y" end="_Start+190x+70y" edge="end" />
+      <connection name="DIO 3" start="_Start+180x+80y" end="_Start+190x+80y" edge="end" />
+      <connection name="DIO 4" start="_Start+180x+90y" end="_Start+190x+90y" edge="end" />
+      <connection name="DIO 5" start="_Start+180x+100y" end="_Start+190x+100y" edge="end" />
+      <connection name="DIO 6" start="_Start+180x+110y" end="_Start+190x+110y" edge="end" />
+      <connection name="DIO 7" start="_Start+180x+120y" end="_Start+190x+120y" edge="end" />
+      <connection name="DIO 8" start="_Start+180x+130y" end="_Start+190x+130y" edge="end" />
+      <connection name="DIO 9" start="_Start+180x+140y" end="_Start+190x+140y" edge="end" />
+
+      <!-- PWM -->
+      <connection name="PWM 0" start="_Start+180x+160y" end="_Start+190x+160y" edge="end" />
+      <connection name="PWM 1" start="_Start+180x+170y" end="_Start+190x+170y" edge="end" />
+      <connection name="PWM 2" start="_Start+180x+180y" end="_Start+190x+180y" edge="end" />
+      <connection name="PWM 3" start="_Start+180x+190y" end="_Start+190x+190y" edge="end" />
+      <connection name="PWM 4" start="_Start+180x+200y" end="_Start+190x+200y" edge="end" />
+      <connection name="PWM 5" start="_Start+180x+210y" end="_Start+190x+210y" edge="end" />
+      <connection name="PWM 6" start="_Start+180x+220y" end="_Start+190x+220y" edge="end" />
+      <connection name="PWM 7" start="_Start+180x+230y" end="_Start+190x+230y" edge="end" />
+      <connection name="PWM 8" start="_Start+180x+240y" end="_Start+190x+240y" edge="end" />
+      <connection name="PWM 9" start="_Start+180x+250y" end="_Start+190x+250y" edge="end" />
+
+      <!-- Relay -->
+      <connection name="Relay 0 Fwd" start="_Start+180x+270y" end="_Start+190x+270y" edge="end" />
+      <connection name="Relay 0 Rev" start="_Start+180x+280y" end="_Start+190x+280y" edge="end" />
+      <connection name="Relay 1 Fwd" start="_Start+180x+290y" end="_Start+190x+290y" edge="end" />
+      <connection name="Relay 1 Rev" start="_Start+180x+300y" end="_Start+190x+300y" edge="end" />
+      <connection name="Relay 2 Fwd" start="_Start+180x+310y" end="_Start+190x+310y" edge="end" />
+      <connection name="Relay 2 Rev" start="_Start+180x+320y" end="_Start+190x+320y" edge="end" />
+      <connection name="Relay 3 Fwd" start="_Start+180x+330y" end="_Start+190x+330y" edge="end" />
+      <connection name="Relay 3 Rev" start="_Start+180x+340y" end="_Start+190x+340y" edge="end" />
+
+      <!-- Analog -->
+      <connection name="Analog 0" start="_Start+180x+360y" end="_Start+190x+360y" edge="end" />
+      <connection name="Analog 1" start="_Start+180x+370y" end="_Start+190x+370y" edge="end" />
+      <connection name="Analog 2" start="_Start+180x+380y" end="_Start+190x+380y" edge="end" />
+      <connection name="Analog 3" start="_Start+180x+390y" end="_Start+190x+390y" edge="end" />
     </group>
   </connections>
 
   <render>
     <group>
-      <!-- Main Body Outline (Angled Corners) -->
-      <path start="_Start" data="M 10 0 L 130 0 L 140 10 L 140 90 L 130 100 L 10 100 L 0 90 L 0 10 Z" />
+      <!-- Main Body -->
+      <rect x="_Start" y="_Start" width="180" height="410" thickness="2" />
+
+      <!-- Pin Lines -->
+      <!-- Left Side -->
+      <path start="_Start" thickness="1" data="M 0 20 L -10 20 M 0 30 L -10 30 M 0 50 L -10 50 M 0 60 L -10 60 M 0 70 L -10 70 M 0 90 L -10 90 M 0 100 L -10 100 M 0 120 L -10 120 M 0 130 L -10 130 M 0 140 L -10 140 M 0 150 L -10 150 M 0 170 L -10 170 M 0 180 L -10 180 M 0 190 L -10 190 M 0 210 L -10 210 M 0 220 L -10 220 M 0 230 L -10 230 M 0 240 L -10 240 M 0 250 L -10 250 M 0 260 L -10 260 M 0 270 L -10 270 M 0 280 L -10 280 M 0 290 L -10 290 M 0 300 L -10 300" />
+
+      <!-- Right Side -->
+      <path start="_Start" thickness="1" data="M 180 20 L 190 20 M 180 30 L 190 30 M 180 50 L 190 50 M 180 60 L 190 60 M 180 70 L 190 70 M 180 80 L 190 80 M 180 90 L 190 90 M 180 100 L 190 100 M 180 110 L 190 110 M 180 120 L 190 120 M 180 130 L 190 130 M 180 140 L 190 140 M 180 160 L 190 160 M 180 170 L 190 170 M 180 180 L 190 180 M 180 190 L 190 190 M 180 200 L 190 200 M 180 210 L 190 210 M 180 220 L 190 220 M 180 230 L 190 230 M 180 240 L 190 240 M 180 250 L 190 250 M 180 270 L 190 270 M 180 280 L 190 280 M 180 290 L 190 290 M 180 300 L 190 300 M 180 310 L 190 310 M 180 320 L 190 320 M 180 330 L 190 330 M 180 340 L 190 340 M 180 360 L 190 360 M 180 370 L 190 370 M 180 380 L 190 380 M 180 390 L 190 390" />
       
-      <!-- Inner Border (Decoration) -->
-      <path start="_Start" data="M 12 2 L 128 2 L 138 12 L 138 88 L 128 98 L 12 98 L 2 88 L 2 12 Z" thickness="1" />
+      <!-- Component Label -->
+      <text x="_Start+90" y="_Start+400" value="NI roboRIO 2.0" size="large" align="CentreCentre" />
 
-      <!-- RoboRIO Text -->
-      <text x="_Start+70" y="_Start+50" value="RoboRIO" size="large" align="CentreCentre" />
-      <text x="_Start+70" y="_Start+60" value="FRC Control System" size="small" align="CentreCentre" />
+      <!-- Left Side Labels -->
+      <text x="_Start+5" y="_Start+20" value="Vin" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+30" value="GND" size="small" align="CentreLeft" />
 
-      <!-- NI Logo (Simplified) -->
-      <text x="_Start+70" y="_Start+35" value="NI" size="large" align="CentreCentre" />
+      <text x="_Start+5" y="_Start+50" value="ETH" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+60" value="USB B" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+70" value="USB A" size="small" align="CentreLeft" />
 
-      <!-- Power Connector (Top Left) -->
-      <rect x="_Start+5" y="_Start+5" width="40" height="20" thickness="1" />
-      <text x="_Start+25" y="_Start+15" value="POWER" size="small" align="CentreCentre" />
-      <!-- Pins are at 10x and 30x. -->
-      <rect x="_Start+8" y="_Start-2" width="4" height="7" fill="true" /> <!-- Vin Pin -->
-      <rect x="_Start+28" y="_Start-2" width="4" height="7" fill="true" /> <!-- GND Pin -->
+      <text x="_Start+5" y="_Start+90" value="CAN H" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+100" value="CAN L" size="small" align="CentreLeft" />
 
-      <!-- CAN Connector (Top Right) -->
-      <rect x="_Start+105" y="_Start+5" width="30" height="20" thickness="1" />
-      <text x="_Start+120" y="_Start+15" value="CAN" size="small" align="CentreCentre" />
-      <!-- Pins at 110x and 130x -->
-      <rect x="_Start+108" y="_Start-2" width="4" height="7" fill="true" />
-      <rect x="_Start+128" y="_Start-2" width="4" height="7" fill="true" />
+      <text x="_Start+5" y="_Start+120" value="I2C 3.3V" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+130" value="I2C SDA" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+140" value="I2C SCL" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+150" value="I2C GND" size="small" align="CentreLeft" />
 
-      <!-- PWM Connector (Bottom) -->
-      <rect x="_Start+15" y="_Start+80" width="80" height="15" thickness="1" />
-      <text x="_Start+55" y="_Start+88" value="PWM" size="small" align="CentreCentre" />
-      <!-- Pins at 20x, 40x, 60x, 80x -->
-      <rect x="_Start+18" y="_Start+95" width="4" height="7" fill="true" />
-      <rect x="_Start+38" y="_Start+95" width="4" height="7" fill="true" />
-      <rect x="_Start+58" y="_Start+95" width="4" height="7" fill="true" />
-      <rect x="_Start+78" y="_Start+95" width="4" height="7" fill="true" />
+      <text x="_Start+5" y="_Start+170" value="RS-232 GND" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+180" value="RS-232 TX" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+190" value="RS-232 RX" size="small" align="CentreLeft" />
+
+      <text x="_Start+5" y="_Start+210" value="SPI 3.3V" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+220" value="SPI 5V" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+230" value="SPI GND" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+240" value="SPI SCLK" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+250" value="SPI COPI" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+260" value="SPI CIPO" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+270" value="SPI CS0" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+280" value="SPI CS1" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+290" value="SPI CS2" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+300" value="SPI CS3" size="small" align="CentreLeft" />
+
+      <!-- Right Side Labels -->
+      <text x="_Start+175" y="_Start+20" value="RSL S" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+30" value="RSL G" size="small" align="CentreRight" />
+
+      <text x="_Start+175" y="_Start+50" value="DIO 0" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+60" value="DIO 1" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+70" value="DIO 2" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+80" value="DIO 3" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+90" value="DIO 4" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+100" value="DIO 5" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+110" value="DIO 6" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+120" value="DIO 7" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+130" value="DIO 8" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+140" value="DIO 9" size="small" align="CentreRight" />
+
+      <text x="_Start+175" y="_Start+160" value="PWM 0" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+170" value="PWM 1" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+180" value="PWM 2" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+190" value="PWM 3" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+200" value="PWM 4" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+210" value="PWM 5" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+220" value="PWM 6" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+230" value="PWM 7" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+240" value="PWM 8" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+250" value="PWM 9" size="small" align="CentreRight" />
+
+      <text x="_Start+175" y="_Start+270" value="Relay 0 Fwd" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+280" value="Relay 0 Rev" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+290" value="Relay 1 Fwd" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+300" value="Relay 1 Rev" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+310" value="Relay 2 Fwd" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+320" value="Relay 2 Rev" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+330" value="Relay 3 Fwd" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+340" value="Relay 3 Rev" size="small" align="CentreRight" />
+
+      <text x="_Start+175" y="_Start+360" value="Analog 0" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+370" value="Analog 1" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+380" value="Analog 2" size="small" align="CentreRight" />
+      <text x="_Start+175" y="_Start+390" value="Analog 3" size="small" align="CentreRight" />
+
     </group>
   </render>
 </component>
