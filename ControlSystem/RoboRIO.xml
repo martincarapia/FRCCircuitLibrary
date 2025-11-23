@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component version="1.0" xmlns="http://schemas.circuit-diagram.org/circuitDiagramDocument/2012/component/xml">
+  <declaration>
+    <meta name="name" value="RoboRIO" />
+    <meta name="author" value="FRC Team" />
+    <meta name="category" value="FRC Control System" />
+    <!-- Unique GUID - Do not change this for this specific component -->
+    <meta name="guid" value="550e8400-e29b-41d4-a716-446655440001" />
+  </declaration>
+
+  <connections>
+    <group>
+      <!-- Power Input (Top Left) -->
+      <connection name="Vin" start="_Start+10x" end="_Start+10x-10y" edge="start" />
+      <connection name="GND" start="_Start+30x" end="_Start+30x-10y" edge="start" />
+      
+      <!-- CAN Bus (Top Right) -->
+      <connection name="CAN H" start="_Start+110x" end="_Start+110x-10y" edge="start" />
+      <connection name="CAN L" start="_Start+130x" end="_Start+130x-10y" edge="start" />
+
+      <!-- PWM Outputs (Bottom) -->
+      <connection name="PWM 0" start="_Start+20x+100y" end="_Start+20x+110y" edge="end" />
+      <connection name="PWM 1" start="_Start+40x+100y" end="_Start+40x+110y" edge="end" />
+      <connection name="PWM 2" start="_Start+60x+100y" end="_Start+60x+110y" edge="end" />
+      <connection name="PWM 3" start="_Start+80x+100y" end="_Start+80x+110y" edge="end" />
+    </group>
+  </connections>
+
+  <render>
+    <group>
+      <!-- Main Body Outline (Angled Corners) -->
+      <path start="_Start" data="M 10 0 L 130 0 L 140 10 L 140 90 L 130 100 L 10 100 L 0 90 L 0 10 Z" />
+      
+      <!-- Inner Border (Decoration) -->
+      <path start="_Start" data="M 12 2 L 128 2 L 138 12 L 138 88 L 128 98 L 12 98 L 2 88 L 2 12 Z" thickness="1" />
+
+      <!-- RoboRIO Text -->
+      <text x="_Start+70" y="_Start+50" value="RoboRIO" size="large" align="CentreCentre" />
+      <text x="_Start+70" y="_Start+60" value="FRC Control System" size="small" align="CentreCentre" />
+
+      <!-- NI Logo (Simplified) -->
+      <text x="_Start+70" y="_Start+35" value="NI" size="large" align="CentreCentre" />
+
+      <!-- Power Connector (Top Left) -->
+      <rect x="_Start+5" y="_Start+5" width="40" height="20" thickness="1" />
+      <text x="_Start+25" y="_Start+15" value="POWER" size="small" align="CentreCentre" />
+      <!-- Pins are at 10x and 30x. -->
+      <rect x="_Start+8" y="_Start-2" width="4" height="7" fill="true" /> <!-- Vin Pin -->
+      <rect x="_Start+28" y="_Start-2" width="4" height="7" fill="true" /> <!-- GND Pin -->
+
+      <!-- CAN Connector (Top Right) -->
+      <rect x="_Start+105" y="_Start+5" width="30" height="20" thickness="1" />
+      <text x="_Start+120" y="_Start+15" value="CAN" size="small" align="CentreCentre" />
+      <!-- Pins at 110x and 130x -->
+      <rect x="_Start+108" y="_Start-2" width="4" height="7" fill="true" />
+      <rect x="_Start+128" y="_Start-2" width="4" height="7" fill="true" />
+
+      <!-- PWM Connector (Bottom) -->
+      <rect x="_Start+15" y="_Start+80" width="80" height="15" thickness="1" />
+      <text x="_Start+55" y="_Start+88" value="PWM" size="small" align="CentreCentre" />
+      <!-- Pins at 20x, 40x, 60x, 80x -->
+      <rect x="_Start+18" y="_Start+95" width="4" height="7" fill="true" />
+      <rect x="_Start+38" y="_Start+95" width="4" height="7" fill="true" />
+      <rect x="_Start+58" y="_Start+95" width="4" height="7" fill="true" />
+      <rect x="_Start+78" y="_Start+95" width="4" height="7" fill="true" />
+    </group>
+  </render>
+</component>
