@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component version="1.0" xmlns="http://schemas.circuit-diagram.org/circuitDiagramDocument/2012/component/xml">
+  <declaration>
+    <meta name="name" value="REV Spark Max" />
+    <meta name="author" value="Martin Carapia" />
+    <meta name="category" value="FRC Motors" />
+    <meta name="guid" value="550e8400-e29b-41d4-a716-446655440002" />
+  </declaration>
+
+  <connections>
+    <group>
+      <!-- Left Side (Input/Control) -->
+      <connection name="V+" start="_Start+20y" end="_Start-10x+20y" edge="start" />
+      <connection name="GND" start="_Start+30y" end="_Start-10x+30y" edge="start" />
+
+      <connection name="CAN H" start="_Start+50y" end="_Start-10x+50y" edge="start" />
+      <connection name="CAN L" start="_Start+60y" end="_Start-10x+60y" edge="start" />
+      
+      <connection name="PWM" start="_Start+80y" end="_Start-10x+80y" edge="start" />
+
+      <!-- Right Side (Output/Sensors) -->
+      <connection name="Motor A" start="_Start+100x+20y" end="_Start+110x+20y" edge="end" />
+      <connection name="Motor B" start="_Start+100x+30y" end="_Start+110x+30y" edge="end" />
+      <connection name="Motor C" start="_Start+100x+40y" end="_Start+110x+40y" edge="end" />
+
+      <connection name="Data Port" start="_Start+100x+60y" end="_Start+110x+60y" edge="end" />
+    </group>
+  </connections>
+
+  <render>
+    <group>
+      <!-- Main Body -->
+      <rect x="_Start" y="_Start" width="100" height="130" thickness="2" />
+
+      <!-- Pin Lines Left -->
+      <path start="_Start" thickness="1" data="M 0 20 L -10 20 M 0 30 L -10 30 M 0 50 L -10 50 M 0 60 L -10 60 M 0 80 L -10 80" />
+
+      <!-- Pin Lines Right -->
+      <path start="_Start" thickness="1" data="M 100 20 L 110 20 M 100 30 L 110 30 M 100 40 L 110 40 M 100 60 L 110 60" />
+
+      <!-- Labels -->
+      <text x="_Start+50" y="_Start+120" value="REV Spark Max" size="normal" align="CentreCentre" />
+
+      <!-- Left Labels -->
+      <text x="_Start+5" y="_Start+20" value="V+" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+30" value="GND" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+50" value="CAN H" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+60" value="CAN L" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+80" value="PWM" size="small" align="CentreLeft" />
+
+      <!-- Right Labels -->
+      <text x="_Start+95" y="_Start+20" value="M Power (A)" size="small" align="CentreRight" />
+      <text x="_Start+95" y="_Start+30" value="M Ground (B)" size="small" align="CentreRight" />
+      <text x="_Start+95" y="_Start+40" value="M Signal (C)" size="small" align="CentreRight" />
+      
+      <text x="_Start+95" y="_Start+60" value="Data Port" size="small" align="CentreRight" />
+
+    </group>
+  </render>
+</component>
