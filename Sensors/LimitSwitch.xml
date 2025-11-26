@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component version="1.0" xmlns="http://schemas.circuit-diagram.org/circuitDiagramDocument/2012/component/xml">
+  <declaration>
+    <meta name="name" value="Limit Switch" />
+    <meta name="author" value="Martin Carapia" />
+    <meta name="category" value="FRC Sensors" />
+    <meta name="guid" value="550e8400-e29b-41d4-a716-446655440003" />
+  </declaration>
+
+  <connections>
+    <group>
+      <connection name="COM" start="_Start+10y" end="_Start-10x+10y" edge="start" />
+      <connection name="NO" start="_Start+20y" end="_Start-10x+20y" edge="start" />
+      <connection name="NC" start="_Start+30y" end="_Start-10x+30y" edge="start" />
+    </group>
+  </connections>
+
+  <render>
+    <group>
+      <!-- Main Body -->
+      <rect x="_Start" y="_Start" width="40" height="40" thickness="2" />
+      
+      <!-- Lever -->
+      <path start="_Start" thickness="2" data="M 0 0 L 35 -10" />
+      <circle x="_Start+35" y="_Start-10" radius="2" thickness="2" filled="true" />
+
+      <!-- Pin Lines -->
+      <path start="_Start" thickness="1" data="M 0 10 L -10 10 M 0 20 L -10 20 M 0 30 L -10 30" />
+
+      <!-- Labels -->
+      <text x="_Start+20" y="_Start+50" value="Limit Switch" size="small" align="CentreCentre" />
+      
+      <text x="_Start+5" y="_Start+10" value="C" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+20" value="NO" size="small" align="CentreLeft" />
+      <text x="_Start+5" y="_Start+30" value="NC" size="small" align="CentreLeft" />
+    </group>
+  </render>
+</component>
